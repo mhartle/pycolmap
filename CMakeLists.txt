@@ -29,6 +29,7 @@ if (${COLMAP_CGAL_ENABLED})
 else()
     message("Compiling bindings without CGAL support.")
 endif()
+set(EIGEN3_INCLUDE_DIR "${EIGEN3_INCLUDE_DIRS}")
 
 pybind11_add_module(pycolmap main.cc)
 target_link_libraries(pycolmap PRIVATE ${COLMAP_LIBRARIES})
